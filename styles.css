@@ -1,0 +1,495 @@
+:root{
+    --primary-color: #3672e2;
+    --secondary-color: #21418b;
+    --title-color: #050f30;
+    --text-color: #2b2b2b;
+    --title-size: clamp(2.5rem, 5vw, 5rem);
+    --text-size: clamp(1rem, 3vw, 1.4rem);
+    --btn-fz: clamp(14px, 2vw, 1rem);
+}
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    border: 0;
+    margin: 0;
+    min-height: 200vh;
+}
+
+/* ======== HEADER STARTS ======== */
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo_container img{
+    height: clamp(32px, 50%, 48px);
+}
+
+.logo_text{
+    color: inherit;
+    font-family: serif;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    margin-left: 10px;
+}
+
+/* Nav Bar */
+.header_nav{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 0 10px 0 20px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 4rem;
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color 0.6s ease-in-out;
+}
+
+.header_nav.scrolled{
+    background-color: #fff;
+    box-shadow: 2px 0px 10px #0005;
+    color: #000;
+}
+
+.header_nav.scrolled .nav_menu-btn svg rect{
+    fill: #000;
+}
+
+.nav_menu_container{
+    position: relative;
+}
+
+/* Nav List */
+.nav_menu_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: 0.45s;
+}
+
+.nav_menu_list.--clicked{
+    transform: translateX(0%);
+}
+
+.nav_menu_list-item{
+    list-style: none;
+    padding: 0 20px;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.nav_menu_list-item:hover .nav_menu_item-link{
+    color: var(--secondary-color);
+}
+
+.nav_menu_item-link{
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Navbar Menu Btn */
+.nav_menu_btn-container{
+    flex-grow: 1;
+    height: 28px;
+    display: flex;
+    justify-content: end;
+}
+
+.nav_menu-btn{
+    position: fixed;
+    height: inherit;
+    z-index: 200;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.nav_menu-btn svg{
+    height: inherit;
+}
+
+.nav_menu-btn rect{
+    fill: #fff;
+    transition: 0.45s;
+    opacity: 1;
+}
+
+.nav_menu_btn-container.--clicked .nav_menu-btn_svg-rect{
+    fill: #000;
+}
+
+.header_nav .nav_menu-btn:hover svg .nav_menu-btn_svg-rect{
+    fill: var(--secondary-color);
+}
+
+.nav_menu_btn-container svg{
+    width: 100%;
+}
+
+
+/* Header Img */
+.header_img_container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-image: url(assets/HeaderImg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.header_img_overlay{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000d, transparent);
+    backdrop-filter: blur(2px);
+    top: 0;
+    right: 0;
+}
+
+/* Header Content */
+.header_content{
+    width: fit-content;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 50%;
+    text-align: center;
+}
+
+.header_content-title{
+    font-size: clamp(2.6rem, 8vw, 5rem);
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.header_content-subtitle{
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    font-weight: 500;
+}
+
+.header_content-studentInfo{
+    margin-top: 2rem;
+    opacity: 0.7;
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+}
+
+.header_btn{
+    margin-top: 1rem;
+    font-size: var(--btn-fz);
+    cursor: pointer;
+    width: fit-content;
+}
+
+.header_btn-text{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    outline: 1px solid #fff;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition-duration: 0.4s;
+}
+
+.header_btn-text:hover{
+    padding: 10px 30px;
+}
+
+/* ======== HEADER ENDS ======== */
+/* ======== MAIN STARTS ======== */
+#main,#practicas,#unidades{
+    scroll-margin-top: 3.9rem;
+}
+
+/* Default setting for buttons */
+.--btn{
+    display: block;
+    font-size: var(--btn-fz);
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    background-color: #fff;
+    outline: 1px solid #fff;
+    width: fit-content;
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: 0.4s;
+}
+
+.--btn:hover{
+    background-color: transparent;
+    color: #fff;
+    outline: 1px solid #fff;
+}
+
+/* == Practicas Section == */
+.practicas{
+    overflow: hidden;
+    scroll-margin-top: 3.5rem;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+}
+
+.practicas_content{
+    width: 90%;
+    margin: auto;
+    scroll-margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.practicas_content-title{
+    margin: 0 0 1rem;
+    font-size: var(--title-size);
+}
+
+.practicas_content-text{
+    color: #ececec;
+    font-size: var(--text-size);
+}
+
+.practicas_content-btn{
+    font-weight: 600;
+}
+
+.practicas_img-container{
+    overflow: hidden;
+    height: 50%;
+}
+
+.practicas_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+/* == Unidades Section == */
+.unidades{
+    width: 90%;
+    margin: auto;
+    padding: 3rem 0;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.unidades_title{
+    font-size: var(--title-size);
+    text-align: center;
+    margin: 0 0 3rem;
+}
+
+.unidades_flexbox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    align-items: stretch;
+}
+
+.unidad_container {
+    flex-grow: 1;
+    max-width: 300px;
+    min-width: 250px;
+    padding: 20px 15px;
+    background-color: #e7e7e7;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.unidad_container:hover{
+    transform: scale(1.01);
+}
+
+.unidad_icon{
+    width: 80px;
+    aspect-ratio: 1/1;
+}
+
+.unidad_title{
+    margin-bottom: 0;
+    font-size: clamp(1.2rem, 7vw, 1.7rem);
+}
+
+.unidad_btn.--btn{
+    background-color: var(--primary-color);
+    color: #fff;
+    margin-top: 20px;
+    justify-self: end;
+    outline: none;
+}
+
+.unidad_btn-link{
+    text-decoration: none;
+    color: #e7e7e7;
+    transition: 0.4s;
+}
+
+.unidad_btn.--btn:hover .unidad_btn-link{
+    color: #fff;
+    padding: 0 0.5rem;
+}
+
+/* == FOOTER == */
+footer{
+    background-color: var(--secondary-color);
+    padding: 4rem 2rem;
+    color: #fff;
+}
+
+.footer_title{
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    position: relative;
+    padding-left: 10px;
+}
+
+.footer_title::before{
+    display: block;
+    content: '';
+    background-color: #fff;
+    opacity: 0.7;
+    border-radius: 4px;
+    width: calc(100% - 10px);
+    height: 2px;
+    position: absolute;
+    top: 140%;
+}
+
+.footer_content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_text{
+    margin: 0;
+    padding: 10px 20px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.footer_link{
+    text-decoration-color: #fff;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* ======== MAIN ENDS ======== */
+
+/* ======== RESPONSIVE ======= */
+
+@media screen and (width >= 960px) {
+    /* Nav Bar */
+    .nav_menu_btn-container{
+        display: none;
+    }
+
+    .nav_menu_list{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: fit-content;
+        height: inherit;
+        background-color: transparent;
+        transform: translate(0%);
+        transition: 0.45s;
+    }
+
+    .nav_menu_list-item{
+        font-size: clamp(1rem, 6vw, 1.2rem);
+        color: inherit;
+    }
+    
+    .unidades{
+        height: 100vh;
+    }
+
+    .unidades_flexbox{
+        width: 85%;
+        gap: 15px;
+    }
+}
+
+@media screen and (width >= 1080px) {
+    /* Variables */
+    :root{
+        --btn-fz: clamp(14px, 2vw, 1.1rem);
+    }
+
+    /* Header */
+    .header_content-title{
+        margin-bottom: 1.2rem;
+    }
+
+    /* Practicas Section */
+    .practicas{
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .practicas_content{
+        width: 40%;
+        padding: 1rem 2rem;
+    }
+
+    .practicas_img-container{
+        height: 100%;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .practicas_img-container img{
+        height: 100%;
+        object-position: right;
+    }
+}

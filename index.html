@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura De Computadoras - ITS</title>
+    <link rel="shortcut icon" href="assets/pageTabIcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="home">
+        <nav class="header_nav">
+            <a class="logo_container" href="index.html">
+                <img src="assets/Logo.png" alt="">
+                <p class="logo_text">ITS</p>
+            </a>
+            <div class="nav_menu_container">
+                <ul class="nav_menu_list">
+                    <li class="nav_menu_list-item"><a href="#home" class="nav_menu_item-link">Inicio</a></li>
+                    <li class="nav_menu_list-item"><a href="#practicas" class="nav_menu_item-link">Prácticas</a></li>
+                    <li class="nav_menu_list-item"><a href="#unidades" class="nav_menu_item-link">Unidades</a></li>
+                </ul>
+            </div>
+            <div class="nav_menu_btn-container">
+                <!-- <img src="assets/MenuBarBtn.svg" alt="nav_menu button"> -->
+                <div class="nav_menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="43" viewBox="0 0 54 43" fill="none">
+                        <rect id="nav_menu-btn-svg-rect" class="nav_menu-btn_svg-rect" width="54" height="7" rx="3.5" fill="black"/>
+                        <rect id="nav_menu-btn-svg-rect" class="nav_menu-btn_svg-rect" x="9" y="18" width="45" height="7" rx="3.5" fill="black"/>
+                        <rect id="nav_menu-btn-svg-rect" class="nav_menu-btn_svg-rect" y="36" width="54" height="7" rx="3.5" fill="black"/>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+        <div class="header_img_container">
+            <div class="header_img_overlay"></div>
+        </div>
+        <div class="header_content">
+            <div class="header_content_text">
+                <h1 class="header_content-title">Arquitectura De Computadoras</h1>
+                <h2 class="header_content-subtitle">Instituto Tecnológico De Saltillo</h2>
+                <p class="header_content-studentInfo">Daniel Alejandro Sun Flores</p>
+            </div>
+            <div class="header_btn"><a class="header_btn-text" href="#main">Ver más</a></div>
+        </div>
+    </header>
+    <main id="main">
+        <section class="practicas" id="practicas">
+            <div class="practicas_content">
+                <h2 class="practicas_content-title">Prácticas</h2>
+                <p class="practicas_content-text">En este apartado se encuentran todas las practicas realizadas en el semestres. Desde el desarmado y ensamblaje de computadoras reales hasta la exploración de componentes en realidad virtual, estas prácticas fortalecen el conocimiento teórico con experiencias prácticas que preparan al estudiante para el mundo real.</p>
+                <a href="practicas.html" class="practicas_content-btn --btn">Ver Prácticas</a>
+            </div>
+            <div class="practicas_img-container">
+                <img src="assets/practicasImg.jpg" alt="Practicas Imagen" class="practicas_img">
+            </div>
+        </section>
+        <section class="unidades" id="unidades">
+            <h2 class="unidades_title">Unidades</h2>
+            <div class="unidades_flexbox">
+                <div class="unidad_container --unidad1">
+                    <img src="assets/settings (2).png" alt="unidad 1 imagen" class="unidad_icon">
+                    <h2 class="unidad_title">Unidad 1</h2>
+                    <div class="unidad_btn --btn"><a target="_blank" href="documents/UNIDAD 1.pdf" class="unidad_btn-link">Ver Notas</a></div>
+                </div>
+                <div class="unidad_container --unidad2">
+                    <img src="assets/cpu-tower.png" alt="unidad 1 imagen" class="unidad_icon">
+                    <h2 class="unidad_title">Unidad 2</h2>
+                    <div class="unidad_btn --btn"><a target="_blank" href="documents/UNIDAD 2.pdf" class="unidad_btn-link">Ver Notas</a></div>
+                </div>
+                <div class="unidad_container --unidad3">
+                    <img src="assets/tools.png" alt="unidad 2 imagen" class="unidad_icon">
+                    <h2 class="unidad_title">Unidad 3</h2>
+                    <div class="unidad_btn --btn"><a target="_blank" href="documents/UNIDAD 3.pdf" class="unidad_btn-link">Ver Notas</a></div>
+                </div>
+                <div class="unidad_container --unidad4">
+                    <img src="assets/computer.png" alt="unidad 3 imagen" class="unidad_icon">
+                    <h2 class="unidad_title">Unidad 4</h2>
+                    <div class="unidad_btn --btn"><a target="_blank" href="documents/UNIDAD 4.pdf" class="unidad_btn-link">Ver Notas</a></div>
+                </div>
+            </div>
+        </section>
+        <footer id="#footer">
+            <h3 class="footer_title">Información Adicional</h3>
+            <div class="footer_content">
+                <p class="footer_text"><a href="" class="footer_link">Información De La Materia</a></p>
+                <p class="footer_text">Correo: daniel.sunflores@gmail.com</p>
+                <p class="footer_text">Telefono: +52 844 495 7355</p>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
